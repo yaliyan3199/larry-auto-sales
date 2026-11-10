@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Larry Auto Sales | Quality Used Cars, Honest Prices</title>
+<meta name="description" content="Larry Auto Sales: inspected pre-owned cars, trucks and SUVs with simple financing and trade-ins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="top">
+  <a class="logo" href="#top">Larry <span>Auto Sales</span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  <nav id="menu">
+    <a href="#inventory">Inventory</a><a href="#finance">Financing</a><a href="#why">Why Larry</a><a href="#contact">Contact</a>
+    <a class="btn btn-sm" href="tel:+10000000000">Call (000) 000-0000</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Good cars.<br>Straight deals.</h1>
+    <p>Every vehicle on our lot is inspected, priced fairly and ready to drive home. No pressure, no hidden fees.</p>
+    <form class="quick" id="quick">
+      <select id="qMake" aria-label="Make"><option value="">Any make</option></select>
+      <select id="qPrice" aria-label="Max price">
+        <option value="">Any price</option><option value="10000">Under $10,000</option><option value="20000">Under $20,000</option><option value="30000">Under $30,000</option>
+      </select>
+      <button class="btn" type="submit">Search cars</button>
+    </form>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 640 260"><use href="#car"/></svg>
+  </div>
+</section>
+
+<section class="strip">
+  <div><b>150+</b> point inspection</div><div><b>7-day</b> exchange policy</div><div><b>All credit</b> welcome</div><div><b>Free</b> vehicle history report</div>
+</section>
+
+<section class="sec" id="inventory">
+  <div class="head">
+    <h2>Current inventory</h2>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search make or model" aria-label="Search">
+      <select id="type" aria-label="Body type"><option value="">All types</option><option>Sedan</option><option>SUV</option><option>Truck</option><option>Coupe</option></select>
+      <select id="sort" aria-label="Sort"><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="miles">Lowest mileage</option></select>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="sec alt" id="finance">
+  <div class="split">
+    <div>
+      <h2>Estimate your monthly payment</h2>
+      <p>Move the sliders to see what a car could cost each month. Final terms depend on approval, and our team will find the best fit for your budget.</p>
+    </div>
+    <div class="calc">
+      <label>Vehicle price <output id="oP"></output><input id="cP" type="range" min="3000" max="60000" step="500" value="18000"></label>
+      <label>Down payment <output id="oD"></output><input id="cD" type="range" min="0" max="20000" step="250" value="2000"></label>
+      <label>Term <output id="oT"></output><input id="cT" type="range" min="12" max="84" step="12" value="60"></label>
+      <label>APR <output id="oA"></output><input id="cA" type="range" min="2" max="20" step="0.5" value="7.5"></label>
+      <div class="result"><span>Estimated payment</span><strong id="pay"></strong><small>per month</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <h2>Why people buy from Larry</h2>
+  <div class="cards">
+    <article><h3>Inspected before listing</h3><p>Our technicians check brakes, engine, tires and electronics. If it isn't up to standard, it doesn't reach the lot.</p></article>
+    <article><h3>Prices posted openly</h3><p>The price you see online is the price we talk about. Taxes and registration are explained up front.</p></article>
+    <article><h3>Fair trade-in offers</h3><p>Bring your current car for a free appraisal. Most take about fifteen minutes.</p></article>
+    <article><h3>Financing for every situation</h3><p>First-time buyer or rebuilding credit, we work with several lenders to get you approved.</p></article>
+  </div>
+</section>
+
+<section class="sec alt" id="contact">
+  <div class="split">
+    <div>
+      <h2>Visit or get in touch</h2>
+      <address>
+        123 Main Street, Your City, ST 00000<br>
+        <a href="tel:+10000000000">(000) 000-0000</a><br>
+        <a href="mailto:info@larryautosales.com">info@larryautosales.com</a>
+      </address>
+      <ul class="hours"><li><span>Mon to Fri</span>9:00 am to 7:00 pm</li><li><span>Saturday</span>9:00 am to 5:00 pm</li><li><span>Sunday</span>Closed</li></ul>
+    </div>
+    <form class="form" id="form" novalidate>
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Phone or email<input name="contact" required></label>
+      <label>Vehicle of interest<input name="car" id="fCar" placeholder="e.g. 2019 Honda Civic"></label>
+      <label>Message<textarea name="msg" rows="4"></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Larry <span>Auto Sales</span></div>
+  <p>&copy; <span id="yr"></span> Larry Auto Sales. All rights reserved. Prices exclude taxes, title and registration fees.</p>
+</footer>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="car" viewBox="0 0 640 260">
+    <path d="M40 180c0-18 8-30 26-34l70-16 60-52c8-7 18-10 28-10h150c12 0 22 4 30 12l62 50 70 14c20 4 30 16 30 36v10c0 6-4 10-10 10h-38a52 52 0 0 0-104 0H240a52 52 0 0 0-104 0H50c-6 0-10-4-10-10z" fill="currentColor"/>
+    <path d="M214 82h130v48H168zM360 82h54c6 0 10 2 14 6l36 42H360z" fill="#fff" opacity=".18"/>
+    <g fill="#101820"><circle cx="188" cy="192" r="40"/><circle cx="462" cy="192" r="40"/></g>
+    <g fill="#c9ccd1"><circle cx="188" cy="192" r="18"/><circle cx="462" cy="192" r="18"/></g>
+  </symbol>
+</svg>
+<script src="js/main.js"></script>
+</body>
+</html>
