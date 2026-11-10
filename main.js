@@ -1,14 +1,15 @@
 // ===== Edit this list to update your inventory =====
+// img: path to the photo in the images/ folder (or a full https:// link). If the photo is missing, a silhouette shows instead.
 const CARS=[
- {id:1,year:2020,make:"Toyota",model:"Camry SE",type:"Sedan",price:19900,miles:41200,trans:"Automatic",fuel:"Gas",color:"#3b4a5a"},
- {id:2,year:2019,make:"Honda",model:"Civic EX",type:"Sedan",price:16500,miles:52800,trans:"Automatic",fuel:"Gas",color:"#8a2a2a"},
- {id:3,year:2018,make:"Ford",model:"F-150 XLT",type:"Truck",price:28900,miles:68400,trans:"Automatic",fuel:"Gas",color:"#2c3e5c"},
- {id:4,year:2021,make:"Hyundai",model:"Tucson SEL",type:"SUV",price:23400,miles:29700,trans:"Automatic",fuel:"Gas",color:"#5d6770"},
- {id:5,year:2017,make:"Nissan",model:"Altima SV",type:"Sedan",price:9800,miles:88100,trans:"Automatic",fuel:"Gas",color:"#1f2933"},
- {id:6,year:2019,make:"Chevrolet",model:"Equinox LT",type:"SUV",price:17900,miles:46500,trans:"Automatic",fuel:"Gas",color:"#7a5c2e"},
- {id:7,year:2016,make:"Honda",model:"Accord Sport",type:"Sedan",price:12400,miles:77300,trans:"Automatic",fuel:"Gas",color:"#4a5568"},
- {id:8,year:2020,make:"Ford",model:"Mustang EcoBoost",type:"Coupe",price:26500,miles:33900,trans:"Manual",fuel:"Gas",color:"#a32020"},
- {id:9,year:2018,make:"Toyota",model:"RAV4 XLE",type:"SUV",price:21800,miles:57600,trans:"Automatic",fuel:"Gas",color:"#2f4f4f"}
+ {id:1,img:"images/car1.jpg",year:2020,make:"Toyota",model:"Camry SE",type:"Sedan",price:19900,miles:41200,trans:"Automatic",fuel:"Gas",color:"#3b4a5a"},
+ {id:2,img:"images/car2.jpg",year:2019,make:"Honda",model:"Civic EX",type:"Sedan",price:16500,miles:52800,trans:"Automatic",fuel:"Gas",color:"#8a2a2a"},
+ {id:3,img:"images/car3.jpg",year:2018,make:"Ford",model:"F-150 XLT",type:"Truck",price:28900,miles:68400,trans:"Automatic",fuel:"Gas",color:"#2c3e5c"},
+ {id:4,img:"images/car4.jpg",year:2021,make:"Hyundai",model:"Tucson SEL",type:"SUV",price:23400,miles:29700,trans:"Automatic",fuel:"Gas",color:"#5d6770"},
+ {id:5,img:"images/car5.jpg",year:2017,make:"Nissan",model:"Altima SV",type:"Sedan",price:9800,miles:88100,trans:"Automatic",fuel:"Gas",color:"#1f2933"},
+ {id:6,img:"images/car6.jpg",year:2019,make:"Chevrolet",model:"Equinox LT",type:"SUV",price:17900,miles:46500,trans:"Automatic",fuel:"Gas",color:"#7a5c2e"},
+ {id:7,img:"images/car7.jpg",year:2016,make:"Honda",model:"Accord Sport",type:"Sedan",price:12400,miles:77300,trans:"Automatic",fuel:"Gas",color:"#4a5568"},
+ {id:8,img:"images/car8.jpg",year:2020,make:"Ford",model:"Mustang EcoBoost",type:"Coupe",price:26500,miles:33900,trans:"Manual",fuel:"Gas",color:"#a32020"},
+ {id:9,img:"images/car9.jpg",year:2018,make:"Toyota",model:"RAV4 XLE",type:"SUV",price:21800,miles:57600,trans:"Automatic",fuel:"Gas",color:"#2f4f4f"}
 ];
 const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString("en-US");
 const usd=n=>"$"+fmt(Math.round(n));
@@ -27,7 +28,7 @@ function render(){
  $("#count").textContent=list.length?`${list.length} vehicle${list.length>1?"s":""} available`:"No vehicles match. Try changing your filters.";
  $("#grid").innerHTML=list.map(c=>`
  <article class="car">
-  <div class="pic" style="color:${c.color}"><span class="tag">${c.type}</span><svg viewBox="0 0 640 260" role="img" aria-label="${c.make} ${c.model}"><use href="#car"/></svg></div>
+  <div class="pic" style="color:${c.color}"><span class="tag">${c.type}</span><svg viewBox="0 0 640 260" role="img" aria-label="${c.make} ${c.model}"><use href="#car"/></svg>${c.img?`<img src="${c.img}" alt="${c.year} ${c.make} ${c.model}" loading="lazy" onerror="this.remove()">`:""}</div>
   <div class="info">
    <h3>${c.year} ${c.make} ${c.model}</h3>
    <div class="price">${usd(c.price)}</div>
