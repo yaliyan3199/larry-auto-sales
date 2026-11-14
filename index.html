@@ -1,120 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Larry Auto Sales | Quality Used Cars, Honest Prices</title>
-<meta name="description" content="Larry Auto Sales: inspected pre-owned cars, trucks and SUVs with simple financing and trade-ins.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quality Used Cars, Trucks & SUVs | Larry Auto Sale</title><meta name="description" content="Larry Auto Sale: quality pre-owned vehicles, easy financing, trade-ins and cash offers on your car.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="nav" id="top">
-  <a class="logo" href="#top">Larry <span>Auto Sales</span></a>
-  <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
-  <nav id="menu">
-    <a href="#inventory">Inventory</a><a href="#finance">Financing</a><a href="#why">Why Larry</a><a href="#contact">Contact</a>
-    <a class="btn btn-sm" href="tel:+10000000000">Call (000) 000-0000</a>
-  </nav>
-</header>
+<div class="topbar"><div class="wrap"><span>Financing available. Trade-ins welcome. We buy cars.</span><a href="tel:+19563963860">Call (956) 396-3860</a></div></div>
+<header class="header"><div class="wrap nav"><a href="index.html" class="logo"><i></i>LARRY<b>AUTO SALE</b></a>
+<nav id="menu"><a href="index.html" class="act">Home</a><a href="inventory.html">Inventory</a><a href="financing.html">Financing</a><a href="sell-your-car.html">Sell Your Car</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="mcall" href="tel:+19563963860">Call (956) 396-3860</a></nav>
+<a class="btn btn-pr nav-cta" href="financing.html">Get Pre-Approved</a>
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Good cars.<br>Straight deals.</h1>
-    <p>Every vehicle on our lot is inspected, priced fairly and ready to drive home. No pressure, no hidden fees.</p>
-    <form class="quick" id="quick">
-      <select id="qMake" aria-label="Make"><option value="">Any make</option></select>
-      <select id="qPrice" aria-label="Max price">
-        <option value="">Any price</option><option value="10000">Under $10,000</option><option value="20000">Under $20,000</option><option value="30000">Under $30,000</option>
-      </select>
-      <button class="btn" type="submit">Search cars</button>
-    </form>
-  </div>
-  <div class="hero-art" aria-hidden="true">
-    <svg viewBox="0 0 640 260"><use href="#car"/></svg>
-  </div>
-</section>
-
-<section class="strip">
-  <div><b>150+</b> point inspection</div><div><b>7-day</b> exchange policy</div><div><b>All credit</b> welcome</div><div><b>Free</b> vehicle history report</div>
-</section>
-
-<section class="sec" id="inventory">
-  <div class="head">
-    <h2>Current inventory</h2>
-    <div class="tools">
-      <input id="search" type="search" placeholder="Search make or model" aria-label="Search">
-      <select id="type" aria-label="Body type"><option value="">All types</option><option>Sedan</option><option>SUV</option><option>Truck</option><option>Coupe</option></select>
-      <select id="sort" aria-label="Sort"><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="miles">Lowest mileage</option></select>
-    </div>
-  </div>
-  <p class="count" id="count" aria-live="polite"></p>
-  <div class="grid" id="grid"></div>
-</section>
-
-<section class="sec alt" id="finance">
-  <div class="split">
-    <div>
-      <h2>Estimate your monthly payment</h2>
-      <p>Move the sliders to see what a car could cost each month. Final terms depend on approval, and our team will find the best fit for your budget.</p>
-    </div>
-    <div class="calc">
-      <label>Vehicle price <output id="oP"></output><input id="cP" type="range" min="3000" max="60000" step="500" value="18000"></label>
-      <label>Down payment <output id="oD"></output><input id="cD" type="range" min="0" max="20000" step="250" value="2000"></label>
-      <label>Term <output id="oT"></output><input id="cT" type="range" min="12" max="84" step="12" value="60"></label>
-      <label>APR <output id="oA"></output><input id="cA" type="range" min="2" max="20" step="0.5" value="7.5"></label>
-      <div class="result"><span>Estimated payment</span><strong id="pay"></strong><small>per month</small></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="why">
-  <h2>Why people buy from Larry</h2>
-  <div class="cards">
-    <article><h3>Inspected before listing</h3><p>Our technicians check brakes, engine, tires and electronics. If it isn't up to standard, it doesn't reach the lot.</p></article>
-    <article><h3>Prices posted openly</h3><p>The price you see online is the price we talk about. Taxes and registration are explained up front.</p></article>
-    <article><h3>Fair trade-in offers</h3><p>Bring your current car for a free appraisal. Most take about fifteen minutes.</p></article>
-    <article><h3>Financing for every situation</h3><p>First-time buyer or rebuilding credit, we work with several lenders to get you approved.</p></article>
-  </div>
-</section>
-
-<section class="sec alt" id="contact">
-  <div class="split">
-    <div>
-      <h2>Visit or get in touch</h2>
-      <address>
-        123 Main Street, Your City, ST 00000<br>
-        <a href="tel:+10000000000">(000) 000-0000</a><br>
-        <a href="mailto:info@larryautosales.com">info@larryautosales.com</a>
-      </address>
-      <ul class="hours"><li><span>Mon to Fri</span>9:00 am to 7:00 pm</li><li><span>Saturday</span>9:00 am to 5:00 pm</li><li><span>Sunday</span>Closed</li></ul>
-    </div>
-    <form class="form" id="form" novalidate>
-      <label>Name<input name="name" required autocomplete="name"></label>
-      <label>Phone or email<input name="contact" required></label>
-      <label>Vehicle of interest<input name="car" id="fCar" placeholder="e.g. 2019 Honda Civic"></label>
-      <label>Message<textarea name="msg" rows="4"></textarea></label>
-      <button class="btn" type="submit">Send message</button>
-      <p class="note" id="note" role="status"></p>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="logo">Larry <span>Auto Sales</span></div>
-  <p>&copy; <span id="yr"></span> Larry Auto Sales. All rights reserved. Prices exclude taxes, title and registration fees.</p>
-</footer>
-
-<svg width="0" height="0" style="position:absolute">
-  <symbol id="car" viewBox="0 0 640 260">
-    <path d="M40 180c0-18 8-30 26-34l70-16 60-52c8-7 18-10 28-10h150c12 0 22 4 30 12l62 50 70 14c20 4 30 16 30 36v10c0 6-4 10-10 10h-38a52 52 0 0 0-104 0H240a52 52 0 0 0-104 0H50c-6 0-10-4-10-10z" fill="currentColor"/>
-    <path d="M214 82h130v48H168zM360 82h54c6 0 10 2 14 6l36 42H360z" fill="#fff" opacity=".18"/>
-    <g fill="#101820"><circle cx="188" cy="192" r="40"/><circle cx="462" cy="192" r="40"/></g>
-    <g fill="#c9ccd1"><circle cx="188" cy="192" r="18"/><circle cx="462" cy="192" r="18"/></g>
-  </symbol>
-</svg>
-<script src="main.js"></script>
-</body>
-</html>
+<section class="hero" data-img="photo-1503376780353-7e6692767b70"><div class="wrap hero-in">
+<p class="pill">Pre-owned cars, trucks and SUVs</p>
+<h1>Find the car you want. Drive it home this week.</h1>
+<p class="sub">Inspected vehicles, honest prices and financing built around your budget. Good credit, bad credit or no credit, talk to us first.</p>
+<div class="btns"><a class="btn btn-pr" href="inventory.html">Browse inventory</a><a class="btn btn-ghost" href="financing.html">Apply for financing</a></div>
+<form class="hsearch" action="inventory.html"><label>Make<select name="make" id="hmake"><option value="">Any make</option></select></label><label>Body type<select name="body"><option value="">Any type</option><option>SUV</option><option>Sedan</option><option>Truck</option><option>Hatchback</option></select></label><label>Max price<select name="max"><option value="">No max</option><option value="15000">Under $15,000</option><option value="20000">Under $20,000</option><option value="25000">Under $25,000</option><option value="30000">Under $30,000</option></select></label><button class="btn btn-pr" type="submit">Search cars</button></form>
+</div></section>
+<section class="strip"><div class="wrap grid4"><div><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-.8-1.3-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5 1.3 5 4 0 1.1-1 2-2.5 2-1.2 0-2.1-.5-2.6-1.4M12 6.5v1.8M12 15.7v1.8"/></svg></span><div><b>Easy financing</b><span>All credit levels welcome</span></div></div><div><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5M20 12a8 8 0 01-14 5M18 3v4h-4M6 21v-4h4"/></svg></span><div><b>Trade-ins welcome</b><span>Fair value on your car</span></div></div><div><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 16l1.5-5a2 2 0 011.9-1.4h7.2a2 2 0 011.9 1.4L19 16v3h-2v-1.5H7V19H5z"/><circle cx="8" cy="14" r=".8"/><circle cx="16" cy="14" r=".8"/></svg></span><div><b>We buy cars</b><span>Offers, same-day answers</span></div></div><div><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Inspected vehicles</b><span>Checked before sale</span></div></div></div></section>
+<section class="sec offers"><div class="wrap"><div class="head row"><div><span class="lab">Limited-time deals</span><h2>Special offers</h2><p>Hand-picked vehicles at reduced prices. Offers are sample data until the dealership adds its own.</p></div><a class="btn btn-navy" href="inventory.html?offers=1">View all offers</a></div><div class="grid3" id="offers"></div>
+<div class="offerbar"><div><h3>See a deal you like? Don't wait.</h3><p>Offers are first come, first served. Call or text to reserve your vehicle.</p></div><div class="btns"><a class="btn btn-pr" href="tel:+19563963860">Call (956) 396-3860</a><a class="btn btn-ghost" href="sms:+19563963860">Text us</a></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secH"><span class="lab">Shop by type</span><h2>Find the right vehicle for your life</h2><p>Start with the body style you need.</p></div><div class="tiles"><a class="tile" href="inventory.html?body=SUV" data-img="photo-1606664515524-ed2f786a0bd6" data-plain><span class="tt"><b>SUVs</b><em>Space and comfort</em></span><span class="ar" aria-hidden="true">→</span></a><a class="tile" href="inventory.html?body=Sedan" data-img="photo-1555215695-3004980ad54e" data-plain><span class="tt"><b>Sedans</b><em>Smooth and efficient</em></span><span class="ar" aria-hidden="true">→</span></a><a class="tile" href="inventory.html?body=Truck" data-img="photo-1492144534655-ae79c964c9d7" data-plain><span class="tt"><b>Trucks</b><em>Power and utility</em></span><span class="ar" aria-hidden="true">→</span></a><a class="tile" href="inventory.html?body=Hatchback" data-img="photo-1494976388531-d1058494cdd8" data-plain><span class="tt"><b>Hatchbacks</b><em>Compact and practical</em></span><span class="ar" aria-hidden="true">→</span></a></div>
+<div class="chips"><a href="inventory.html?max=15000">Under $15,000</a><a href="inventory.html?max=20000">Under $20,000</a><a href="inventory.html?max=25000">Under $25,000</a><a href="inventory.html?max=30000">Under $30,000</a></div></div></section>
+<section class="sec gray"><div class="wrap"><div class="head row"><div><span class="lab">Featured inventory</span><h2>Fresh on the lot</h2><p>Sample inventory. Replaced with the dealership's real vehicles.</p></div><a class="btn btn-navy" href="inventory.html">View all inventory</a></div><div class="grid3" id="featured"></div></div></section>
+<section class="sec dark"><div class="wrap"><div class="secH"><span class="lab">Why Larry Auto Sale</span><h2>A better way to buy a used car</h2><p>Straightforward, fair and built on trust.</p></div><div class="whyg">
+<div class="why"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Inspected vehicles</h3><p>Every car is checked before it is offered for sale.</p></div>
+<div class="why"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-.8-1.3-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5 1.3 5 4 0 1.1-1 2-2.5 2-1.2 0-2.1-.5-2.6-1.4M12 6.5v1.8M12 15.7v1.8"/></svg></span><h3>Fair, clear pricing</h3><p>Honest prices with no surprises when you sign.</p></div>
+<div class="why"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></span><h3>Fast replies</h3><p>Call, text or WhatsApp. We answer quickly.</p></div>
+<div class="why"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5M20 12a8 8 0 01-14 5M18 3v4h-4M6 21v-4h4"/></svg></span><h3>Easy trade-ins</h3><p>Use your current car toward your next one.</p></div></div></div></section>
+<section class="sec"><div class="wrap split"><div><span class="lab">Financing</span><h2>Know your payment before you visit</h2><p>Play with the numbers to see a monthly estimate, then get pre-approved with a quick message. No obligation.</p><ul class="ticks "><li>Options for all credit situations</li><li>Trade-in can go toward your down payment</li><li>Fast answers by phone, text or WhatsApp</li></ul><a class="btn btn-pr" href="financing.html">Get pre-approved</a></div><div class="calc"><label>Vehicle price <output id="o1"></output><input type="range" id="price" min="5000" max="60000" step="500" value="20000"></label>
+<label>Down payment <output id="o2"></output><input type="range" id="down" min="0" max="20000" step="250" value="2000"></label>
+<label>APR <output id="o3"></output><input type="range" id="apr" min="0" max="25" step="0.5" value="8.5"></label>
+<label>Term <output id="o4"></output><input type="range" id="term" min="12" max="84" step="12" value="60"></label>
+<div class="result"><span>Estimated monthly payment</span><strong id="monthly"></strong></div><p class="small">Estimate only. Not an offer of credit.</p></div></div></section>
+<section class="sec gray"><div class="wrap"><div class="secH"><span class="lab">How it works</span><h2>Buying with us is simple</h2></div><div class="grid4 steps"><div><b>1</b><h3>Browse</h3><p>Find a vehicle online or visit us.</p></div><div><b>2</b><h3>Get financing</h3><p>Tell us your budget, get your options.</p></div><div><b>3</b><h3>Test drive</h3><p>Schedule a drive that suits you.</p></div><div><b>4</b><h3>Drive home</h3><p>Sign, pay and take the keys.</p></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="banner" data-img="photo-1552519507-da3b142c6e3d" data-plain><span class="lab" style="color:#9fc0f7">Sell or trade</span><h2>Get a fast, fair offer on your car</h2><p>Send us your details and we will respond with a real offer, often the same day.</p><div class="btns"><a class="btn btn-white" href="sell-your-car.html">Get my offer</a><a class="btn btn-ghost" href="tel:+19563963860">Call now</a></div></div></div></section>
+<section class="sec gray"><div class="wrap narrow"><div class="secH"><span class="lab">FAQ</span><h2>Common questions</h2></div>
+<details><summary>Can I get financing with bad or no credit?</summary><p>Call or message us. We work with many situations and will explain your options honestly.</p></details>
+<details><summary>Do you accept trade-ins?</summary><p>Yes. Your trade-in can go toward the down payment on any vehicle.</p></details>
+<details><summary>Can I schedule a test drive?</summary><p>Yes. Tap "Schedule a test drive" on any vehicle or call us to book a time.</p></details>
+<details><summary>Do you buy cars outright?</summary><p>Yes. Send your car details and we will make you an offer.</p></details></div></section>
+<section class="sec"><div class="wrap"><div class="mapwrap"><div class="mapinfo"><span class="lab">Visit us</span><h2>Come see us</h2><p>Stop by to see our vehicles in person. Call or text first so we can have your car ready.</p>
+<dl><div><dt>Address</dt><dd id="addr">Call or text for directions</dd></div><div><dt>Hours</dt><dd>By appointment. Call or text to schedule.</dd></div><div><dt>Phone</dt><dd><a href="tel:+19563963860">(956) 396-3860</a></dd></div></dl>
+<a class="btn btn-pr" data-dir target="_blank" rel="noopener">Get directions</a></div><iframe data-map title="Larry Auto Sale location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
+<section class="cta"><div class="wrap"><h2>Ready to drive home in your next car?</h2><p>Call, text or message us. We reply fast.</p>
+<div class="btns"><a class="btn btn-white" href="tel:+19563963860">Call (956) 396-3860</a><a class="btn btn-ghost" href="sms:+19563963860">Text us</a><a class="btn btn-ghost" href="https://wa.me/19563963860" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
+<footer><div class="wrap fgrid">
+<div><a href="index.html" class="logo light"><i></i>LARRY<b>AUTO SALE</b></a><p>Quality pre-owned vehicles, simple financing and fair offers on your trade-in.</p></div>
+<div><h4>Explore</h4><a href="index.html">Home</a><a href="inventory.html">Inventory</a><a href="financing.html">Financing</a><a href="sell-your-car.html">Sell Your Car</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+<div><h4>Contact</h4><a href="tel:+19563963860">(956) 396-3860</a><a href="sms:+19563963860">Text us</a><a href="https://wa.me/19563963860" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/share/1ABfrBquDR/" target="_blank" rel="noopener">Facebook</a><a href="contact.html#map">Get directions</a></div></div>
+<div class="wrap copy">© <span id="yr"></span> Larry Auto Sale. All rights reserved.</div></footer>
+<div class="mbar"><a href="tel:+19563963860">Call</a><a href="sms:+19563963860">Text</a><a class="g" href="https://wa.me/19563963860" target="_blank" rel="noopener">WhatsApp</a></div>
+<script src="data.js"></script><script src="script.js"></script></body></html>
